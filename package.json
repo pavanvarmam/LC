@@ -14,13 +14,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/pavanvarmam/LC/issues"
   },
   "homepage": "https://github.com/pavanvarmam/LC#readme",
   "dependencies": {
     "express": "^5.1.0",
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "ws": "^8.18.3"
   }
 }
