@@ -3,6 +3,9 @@ import http from 'http';
 import { WebSocketServer } from 'ws';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { Deck } from './Models/Deck.js';
+import { Player } from './Models/Player.js';
+import { Game } from './Models/Game.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,3 +48,23 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// Test
+let deck = new Deck()
+let players = [new Player(1001, "Pavan"),
+    new Player(1002, "Kiran"),
+    new Player(1003, "Kalyan"),
+    new Player(1004, "Gani")]
+
+console.log(deck.toString());
+
+let game = new Game(players, deck)
+
+game.distributeCards()
+
+console.log(players[0].toString());
+console.log(players[1].toString());
+console.log(players[2].toString());
+console.log(players[3].toString());
+
+console.log(game.turnedCard);
